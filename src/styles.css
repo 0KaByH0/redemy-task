@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+p {
+  display: inline;
+}
+
+.paper {
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+  padding: 15px;
+  margin: 50px auto;
+}
+
+.pink {
+  /* background-color: pink; */
+  color: pink;
+}
+.red {
+  /* background-color: red; */
+  color: red;
+}
+.green {
+  /* background-color: green; */
+  color: green;
+}
+.black {
+  /* background-color: green; */
+  color: rgb(0, 0, 0);
+}
+.blue {
+  /* background-color: green; */
+  color: rgb(0, 13, 128);
+}
+
+.f8 {
+  font-size: 8px;
+}
+.f10 {
+  font-size: 10px;
+}
+.f12 {
+  font-size: 12px;
+}
+.f14 {
+  font-size: 14px;
+}
+.f16 {
+  font-size: 16px;
+}
+.f18 {
+  font-size: 18px;
+}
+.f20 {
+  font-size: 20px;
+}
