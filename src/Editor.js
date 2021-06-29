@@ -8,27 +8,34 @@ import React from 'react';
 //   { text: 's', fontSize: 12, color: 'red' },
 // ];
 
-const Editor = ({ color, fontSize }) => {
+const Editor = ({ color, fontSize, bg }) => {
   const editor = React.useRef(null);
   const [input, setInput] = React.useState('');
 
   React.useEffect(() => {
     deletEmpty(editor.current);
     let p = document.createElement('p');
-    p.classList.add(`${color}`, `f${fontSize}`);
+    p.classList.add(`${color}`, `f${fontSize}`, `bg-${bg}`);
     p.innerHTML = ' ';
     editor.current.appendChild(p);
     setCaretToEnd(p);
-  }, [color, fontSize]);
+  }, [color, fontSize, bg]);
 
   const handleChange = (e) => {
-    if (editor.current.lastChild.localName === 'br') {
-      editor.current.removeChild(editor.current.lastChild);
+    let t = Array.from(editor.current.children).map((el) => el);
+    console.log();
+    if (t[0]?.localName === 'font' || t[0]?.localName === 'br') {
+      let p = document.createElement('p');
+      p.classList.add(`${color}`, `f${fontSize}`, `bg-${bg}`);
+      p.innerHTML = ' ';
+      editor.current.appendChild(p);
+      setCaretToEnd(p);
+      editor.current.removeChild(t[0]);
     }
 
     if (e.nativeEvent.key === 'Enter') {
       let p = document.createElement('p');
-      p.classList.add(`${color}`, `f${fontSize}`);
+      p.classList.add(`${color}`, `f${fontSize}`, `bg-${bg}`);
       p.innerHTML = ' ';
       editor.current.appendChild(p);
     }
@@ -52,6 +59,7 @@ const Editor = ({ color, fontSize }) => {
         userSelect: 'text',
         whiteSpace: 'pre-wrap',
         overflowWrap: 'break-word',
+        marginLeft: '30%',
       }}></div>
   );
 };

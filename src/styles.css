@@ -15,24 +15,38 @@ p {
 }
 
 .pink {
-  /* background-color: pink; */
   color: pink;
 }
 .red {
-  /* background-color: red; */
   color: red;
 }
 .green {
-  /* background-color: green; */
   color: green;
 }
 .black {
-  /* background-color: green; */
   color: rgb(0, 0, 0);
 }
 .blue {
-  /* background-color: green; */
   color: rgb(0, 13, 128);
+}
+
+.bg-pink {
+  background-color: pink;
+}
+.bg-red {
+  background-color: red;
+}
+.bg-green {
+  background-color: green;
+}
+.bg-black {
+  background-color: rgb(0, 0, 0);
+}
+.bg-blue {
+  background-color: rgb(0, 13, 128);
+}
+.bg-white {
+  background-color: rgb(255, 255, 255);
 }
 
 .f8 {
